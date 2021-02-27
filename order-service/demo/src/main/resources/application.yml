@@ -1,0 +1,10 @@
+Server:
+  port: 9191
+
+datasource:
+  url: jdbc:h2:mem:testdb
+
+spring:
+  h2:
+    console:
+      enabled: true
