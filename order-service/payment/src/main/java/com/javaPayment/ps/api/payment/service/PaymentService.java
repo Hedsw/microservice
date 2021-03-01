@@ -15,14 +15,13 @@ public class PaymentService {
     private PaymentRepository repository;
 
     public Payment doPayment(Payment payment) {
-        payment.setPaymentStatus((paymentProcessing()));
         payment.setTransactionId(UUID.randomUUID().toString());
+        payment.setPaymentStatus(paymentProcessing());
         return repository.save(payment);
     }
 
-
     public String paymentProcessing() {
-        //api should be 3rd party payment gateway (paypal, payt..)
         return new Random().nextBoolean()?"success":"false";
     }
+
 }

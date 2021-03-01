@@ -22,5 +22,9 @@ public class PaymentController {
         return service.doPayment(payment);
     }
 
+    public String paymentProcessing() {
+        //api should be 3rd party payment gateway (paype
+        return new Random().nextBoolean()?"success":"false";
+    }
 
 }
