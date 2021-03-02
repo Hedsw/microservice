@@ -10,7 +10,11 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 public class TransactionResponse {
     private Order order;
-    private double amount;
+    private double datasize;
+    // ADD
+    private double filename;
+    private double uploader;
+    //
     private String transactionId;
     private String message;
 }

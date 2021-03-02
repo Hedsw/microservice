@@ -11,13 +11,13 @@ import org.springframework.web.bind.annotation.RestController;
 import java.util.Random;
 
 @RestController
-@RequestMapping("/payment")
+@RequestMapping("/2ndservice")
 public class PaymentController {
 
     @Autowired
     private PaymentService service;
 
-    @PostMapping("/doPayment")
+    @PostMapping("/receiver")
     public Payment doPayment(@RequestBody Payment payment) {
         return service.doPayment(payment);
     }

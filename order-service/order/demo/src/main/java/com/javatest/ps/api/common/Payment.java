@@ -21,6 +21,9 @@ public class Payment {
     private String paymentStatus;
     private String transactionId;
     private int orderId;
-    private double amount;
+    private double datasize;
 
+    // ADD
+    private String filename;
+    private String uploader;
 }

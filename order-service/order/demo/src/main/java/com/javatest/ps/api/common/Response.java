@@ -10,8 +10,13 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 public class Response {
     private Order order;
-    private double amount;
+    private double datasize;
+    // ADD
+    private String filename;
+    private String uploader;
+    //
     private String transactionId;
     private String message;
+
 
 }

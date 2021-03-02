@@ -24,14 +24,19 @@ public class OrderService {
         Order order = request.getOrder();
         Payment payment = request.getPayment();
         payment.setOrderId(order.getId());
-        payment.setAmount(order.getPrice());
+        payment.setDatasize(order.getDatasize());
+        payment.setUploader(order.getUploader());
+        payment.setFilename(order.getFilename());
 
         //rest call
-        Payment paymentResponse = template.postForObject("http://localhost:9194/payment/doPayment", payment, Payment.class);
+        Payment paymentResponse = template.postForObject("http://localhost:9194/2ndservice/receiver", payment, Payment.class);
 
         response = paymentResponse.getPaymentStatus().equals("success")?"payment processing successful and order placed" : "there is a failure in payment api, order added to cart";
 
         repository.save(order);
-        return new Response(order, paymentResponse.getAmount(), paymentResponse.getTransactionId(), response);
+        return new Response(order, paymentResponse.getDatasize(), paymentResponse.getFilename(), paymentResponse.getUploader(), paymentResponse.getTransactionId(), response);
+        //ADD
+        //return new Response(order, paymentResponse.getAmount(), paymentResponse.getTransactionId(), response);
+
     }
 }

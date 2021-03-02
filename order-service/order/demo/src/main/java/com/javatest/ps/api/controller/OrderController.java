@@ -15,13 +15,13 @@ import org.springframework.web.bind.annotation.RestController;
 import java.util.Random;
 
 @RestController
-@RequestMapping("/order")
+@RequestMapping("/1stservice")
 public class OrderController {
 
     @Autowired
     private OrderService service;
 
-    @PostMapping("/bookOrder")
+    @PostMapping("/sender")
     public Response bookOrder(@RequestBody TransactionRequest request) {
 
         return service.saveOrder(request);

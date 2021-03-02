@@ -10,7 +10,7 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 
 @Entity
-@Table(name ="ORDER_TB")
+@Table(name ="sender_TB")
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
@@ -20,6 +20,10 @@ public class Order {
     private int id;
     private String name;
     private int qty;
-    private double price;
+    private double datasize;
+    // ADD
+    private String filename;
+    private String uploader;
+    //
 
 }

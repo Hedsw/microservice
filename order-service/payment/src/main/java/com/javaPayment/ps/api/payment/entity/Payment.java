@@ -11,7 +11,7 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 
 @Entity
-@Table(name = "PAYMENT_TB")
+@Table(name = "receiver_TB")
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
@@ -23,6 +23,10 @@ public class Payment {
     private String paymentStatus;
     private String transactionId;
     private int orderId;
-    private double amount;
+    private double datasize;
+
+    // ADD
+    private String filename;
+    private String uploader;
 
 }
