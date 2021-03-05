@@ -29,11 +29,11 @@ public class OrderService {
         payment.setFilename(order.getFilename());
 
         //rest call
-        //Payment paymentResponse = template.postForObject("http://localhost:9194/2ndservice/receiver", payment, Payment.class);
+       // Payment paymentResponse = template.postForObject("http://localhost:9194/2ndservice/receiver", payment, Payment.class);
         // We can switch the First MicroService URL to below like this when we use Eureka
         Payment paymentResponse = template.postForObject("http://FIRSTMICROSERVICE/2ndservice/receiver/", payment, Payment.class);
 
-        response = paymentResponse.getPaymentStatus().equals("success")?"payment processing successful and order placed" : "there is a failure in payment api, order added to cart";
+        response = paymentResponse.getPaymentStatus().equals("success")?"payment processing successful and file is placed" : "Successfully sent the file to second MicroService ";
 
         repository.save(order);
         return new Response(order, paymentResponse.getDatasize(), paymentResponse.getFilename(), paymentResponse.getUploader(), paymentResponse.getTransactionId(), response);
