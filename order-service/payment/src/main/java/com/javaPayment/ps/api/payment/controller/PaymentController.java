@@ -23,9 +23,6 @@ public class PaymentController {
     public Payment findPaymentHistoryByOrderId(int orderId) {
         return service.findPaymentHistoryByOrderId(orderId);
     }
-    public String paymentProcessing() {
-        //api should be 3rd party payment gateway (payment)
-        return new Random().nextBoolean()?"success":"false";
-    }
+
 
 }

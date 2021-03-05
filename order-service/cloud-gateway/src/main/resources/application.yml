@@ -1,18 +1,18 @@
 spring:
   application:
     name: GATEWAY-SERVICE
+
   cloud:
     gateway:
       routes:
-        - id: Second-service
-          uri: lb://SECONDMICROSERVICE
+        - id: SECONDMICROSERVICE
+          uri: lb://localhost:9193
           predicates:
             - Path =/2ndservice/**
-        - id: First-service
-          uri: lb://FIRSTMICROSERVICE
+        - id: FIRSTMICROSERVICE
+          uri: lb://localhost:9194
           predicates:
             - Path =/1stservice/**
-
 eureka:
   client:
     register-with-eureka: true

@@ -1,6 +1,7 @@
 eureka:
   client:
-    register-with-eureka: false
     fetch-registry: false
+    register-with-eureka: false
 server:
   port: 8761
+  response-cache-update-interval-ms: 3000
