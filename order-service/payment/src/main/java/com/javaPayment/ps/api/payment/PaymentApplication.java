@@ -13,5 +13,3 @@ public class PaymentApplication {
 
 }
 
-
-//40:47부터 다시 보면 됨

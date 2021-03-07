@@ -33,7 +33,6 @@ public class OrderService {
         // We can switch the First MicroService URL to below like this when we use Eureka
         //Payment paymentResponse = template.postForObject("http://SECONDMICROSERVICE/2ndservice/receiver", payment, Payment.class);
 
-
         response = paymentResponse.getPaymentStatus().equals("success")?"payment processing successful and file is placed" : "Successfully sent the file to second MicroService ";
 
         repository.save(order);
