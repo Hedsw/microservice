@@ -1,0 +1,24 @@
+cloud:
+  aws:
+    credentials:
+      access-key: AKIAID26W6C7GH47MVLA
+      secret-key: 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
+    region:
+      static: us-east-2
+    stack:
+      auto: false
+
+application:
+  bucket:
+    name: s3storagetest
+
+spring:
+  servlet:
+    multipart:
+      enabled: true
+      file-size-threshold: 2MB
+      max-file-size: 5MB
+      max-request-size: 10MB
+
+server:
+  port: 9090

@@ -31,7 +31,6 @@ public class FileStorageService {
         } catch (IOException e) {
             throw new RuntimeException("Issue in creating file directory");
         }
-
     }
 
     public String storeFile(MultipartFile file) {
@@ -42,7 +41,7 @@ public class FileStorageService {
         try {
             Files.copy(file.getInputStream(), filePath, StandardCopyOption.REPLACE_EXISTING);
         } catch (IOException e) {
-            e.printStackTrace();
+            throw new RuntimeException("Issue in storing the file", e);
         }
 
         return fileName;
@@ -63,6 +62,4 @@ public class FileStorageService {
             throw new RuntimeException("the file doesn't exist or not readable");
         }
     }
-
-
 }
